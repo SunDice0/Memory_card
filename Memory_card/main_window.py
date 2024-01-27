@@ -1,7 +1,9 @@
 from PyQt5.QtCore import Qt
 from PyQt5.QtWidgets import*
 
-def swit    ch_screen():
+
+
+def switch_screen():
     if btn_answer.text()=="Відповістии":
         qwestion_group.hide()
         answer_group.show()
@@ -16,32 +18,32 @@ btn_sleep = QPushButton("Відпочити")
 btn_answer = QPushButton("Відповісти")
 timer=QSpinBox()
 timer.setValue(30)
-timer_text = QLable("хвилин")
+timer_text = QLabel("хвилин")
 
-text_qwestion = QLable("Питання")
-right_answer = QLable("Відповідь")
-text_result = QLable("Результат")
+text_qwestion = QLabel("Питання")
+right_answer = QLabel("Відповідь")
+text_result = QLabel("Результат")
 
 rbtn1=QRadioButton("1")
 rbtn2=QRadioButton("2")
 rbtn3=QRadioButton("3")
 rbtn4=QRadioButton("4")
 
-radiogroup = QButtonGrup()
+radiogroup = QButtonGroup()
 radiogroup.addButton(rbtn1)
 radiogroup.addButton(rbtn2)
 radiogroup.addButton(rbtn3)
 radiogroup.addButton(rbtn4)
 
-qwestion_group=QGrupBox("Варіанти відповідей")
+qwestion_group=QGroupBox("Варіанти відповідей")
 answer_group=QGroupBox("Пезультат тесту")
 
 line=QVBoxLayout()
-line1=QVBoxLayout()
-line2=QVBoxLayout()
-line3=QVBoxLayout()
-line3_q=QHBoxLatout()
-line3_a=QHBoxLatout()
+line1=QHBoxLayout()
+line2=QHBoxLayout()
+line3=QHBoxLayout()
+line3_q=QHBoxLayout()
+line3_a=QVBoxLayout()
 line4=QHBoxLayout()
 
 line_v1=QVBoxLayout()
@@ -55,10 +57,10 @@ line_v2.addWidget(rbtn4)
 line3_q.addLayout(line_v1)
 line3_q.addLayout(line_v2)
 
-qwestion_group.setlayout(line3_q)
+qwestion_group.setLayout(line3_q)
 
-line3_a.addWidget(text_result,aligment=Qt.AlignLeft |Qt.AlignTop)
-line3_a.addWidget(right_answer,aligment=Qt.AlignCenter)
+line3_a.addWidget(text_result,alignment=(Qt.AlignLeft |Qt.AlignTop))
+line3_a.addWidget(right_answer,alignment=Qt.AlignCenter)
 answer_group.setLayout(line3_a)
 answer_group.hide()
 
